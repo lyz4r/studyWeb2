@@ -1,0 +1,184 @@
+@import "../base/mixin";
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: url("../img/logo.svg");
+    padding-right: 10px;
+  }
+}
+
+.header__top {
+  background-color: $header-color;
+}
+
+.header__top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &--mobile {
+    position: fixed;
+    z-index: 228;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 60px;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    .top-row__nav-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 30px;
+    }
+
+    .top-row__nav-list-contact {
+      display: block;
+    }
+
+    .header__nav-btn {
+      position: fixed;
+      top: 50px;
+      right: 50px;
+    }
+  }
+}
+
+.header__nav-btn {
+  display: none;
+  @include mediaTablet {
+    display: inline;
+  }
+}
+
+.top-row__nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+
+  @include mediaTablet {
+    display: none;
+  }
+
+  &-contact {
+    @include mediaTablet {
+      display: none;
+    }
+  }
+}
+
+h1 {
+  padding-top: 144px;
+  margin-bottom: 24px;
+
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 72px;
+}
+
+.header__main {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  margin-right: 0;
+  max-width: 1788px;
+}
+
+.header__container {
+  &--right {
+    background: linear-gradient(
+        238.21deg,
+        #2a213f 8.76%,
+        rgba(25, 25, 25, 0) 50.09%
+      ),
+      url("../img/abstract-design.png");
+    margin-right: 0;
+    margin-left: auto;
+  }
+}
+
+.header__cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(229px, 3fr));
+  gap: 20px;
+
+  @include mediaTablet {
+    margin-bottom: 50px;
+  }
+}
+
+.header__card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 2px;
+
+  @include typicalBorder;
+  background-color: $header-color;
+}
+
+.btn-row {
+  display: flex;
+  gap: 20px;
+}
+
+.card__num {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+.card__span {
+  font-weight: 500;
+  color: $grey;
+  width: 191.33px;
+}
+
+.header__skyscaper {
+  width: 920px;
+  height: 814px;
+  @include mediaTablet {
+    display: none;
+  }
+}
+
+.header__round {
+  position: absolute;
+  left: 47%;
+  top: 250px;
+  animation: roundRotate 2s cubic-bezier(0.215, 0.3, 0.1, 0.4) 0s 3 alternate
+    none;
+  transform: rotate(0deg);
+  transition: all 1s ease-in;
+
+  @include mediaTablet {
+    display: none;
+  }
+}
+
+@keyframes roundRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

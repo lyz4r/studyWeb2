@@ -1,0 +1,53 @@
+.footer {
+  padding-top: 100px;
+}
+
+.footer__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+  @include mediaTablet {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__first-row {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer__email {
+  background-image: url("../img/footer/email.svg"),
+    url("../img/footer/sendEmail.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 24px center, calc(100% - 24px) center;
+  padding-left: 58px;
+
+  width: 423px;
+  height: 66px;
+  color: $grey;
+
+  @include typicalBorder;
+}
+
+.footer__main {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 100px;
+
+  @include mediaTablet {
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
