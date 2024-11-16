@@ -10,31 +10,27 @@ let state = {
   curFirstCardProp: 0,
 };
 
-function changeCardNum(button, cardRow, stateKey) {
+function changeCardNum(button, otherButton, cardRow, stateKey) {
   if (!button.classList.contains("switch--disabled")) {
     const rightRegex = /\bright\b/;
     const leftRegex = /\bleft\b/;
 
     if (rightRegex.test(button.id)) {
       state[stateKey] += 1;
+      otherButton.classList.remove("switch--disabled");
+      if (state[stateKey] === cardRow.length - 3) {
+        button.classList.add("switch--disabled");
+      } else {
+        button.classList.remove("switch--disabled");
+      }
     } else if (leftRegex.test(button.id)) {
+      otherButton.classList.remove("switch--disabled");
       state[stateKey] -= 1;
-    }
-
-    if (state[stateKey] === 0) {
-      swLeftReviews.classList.add("switch--disabled");
-      swLeftProperties.classList.add("switch--disabled");
-    } else {
-      swLeftReviews.classList.remove("switch--disabled");
-      swLeftProperties.classList.remove("switch--disabled");
-    }
-
-    if (state[stateKey] === cardRow.length - 3) {
-      swRightReviews.classList.add("switch--disabled");
-      swRightProperties.classList.add("switch--disabled");
-    } else {
-      swRightReviews.classList.remove("switch--disabled");
-      swRightProperties.classList.remove("switch--disabled");
+      if (state[stateKey] === 0) {
+        button.classList.add("switch--disabled");
+      } else {
+        button.classList.remove("switch--disabled");
+      }
     }
 
     console.log(state[stateKey]);

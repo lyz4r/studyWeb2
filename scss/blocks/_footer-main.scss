@@ -1,5 +1,9 @@
 .footer {
   padding-top: 100px;
+
+  @include mediaTablet {
+    padding-top: 50px;
+  }
 }
 
 .footer__header {
@@ -31,18 +35,23 @@
   color: $grey;
 
   @include typicalBorder;
+
+  @include mediaTablet {
+    width: 80vw;
+  }
 }
 
 .footer__main {
-  display: flex;
+  width: 978px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 100px;
   margin-bottom: 100px;
 
   @include mediaTablet {
-    gap: 30px;
+    width: 100%;
+    gap: 40px;
     margin-bottom: 30px;
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -50,4 +59,5 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: center;
 }

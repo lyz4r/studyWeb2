@@ -92,6 +92,12 @@ h1 {
   font-size: 60px;
   font-weight: 600;
   line-height: 72px;
+
+  @include mediaTablet {
+    padding-top: 50px;
+    font-size: 40px;
+    line-height: normal;
+  }
 }
 
 .header__main {
@@ -100,6 +106,11 @@ h1 {
   gap: 80px;
   margin-right: 0;
   max-width: 1788px;
+
+  @include mediaTablet {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
 }
 
 .header__container {
@@ -113,6 +124,9 @@ h1 {
     margin-right: 0;
     margin-left: auto;
   }
+
+  @include mediaTablet {
+  }
 }
 
 .header__cards-row {
@@ -121,23 +135,19 @@ h1 {
   gap: 20px;
 
   @include mediaTablet {
+    grid-template-columns: repeat(auto-fit, minmax(70vw, 3fr));
     margin-bottom: 50px;
   }
 }
 
 .header__card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+
   padding: 24px 16px;
   gap: 2px;
 
   @include typicalBorder;
   background-color: $header-color;
-}
-
-.btn-row {
-  display: flex;
-  gap: 20px;
 }
 
 .card__num {

@@ -1,6 +1,10 @@
 .stars {
   position: relative;
   left: -25px;
+
+  @include mediaTablet {
+    left: 0;
+  }
 }
 
 .properties {
@@ -35,6 +39,10 @@
   font-size: 24px;
   font-weight: 600;
   line-height: 36px;
+
+  @include mediaTablet {
+    font-size: 20px;
+  }
 }
 
 .card__img {
@@ -109,7 +117,8 @@
   align-items: center;
 
   @include mediaTablet {
-    width: 180px;
+    font-size: 14px;
+    width: 30vw;
   }
 }
 
@@ -137,5 +146,8 @@
 
   &:hover {
     color: $accent;
+  }
+
+  @include mediaTablet {
   }
 }

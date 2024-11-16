@@ -33,6 +33,7 @@ a {
   margin-right: auto;
 
   @media screen and (max-width: 1596px) {
+    max-width: 100%;
     margin-left: 25px;
     margin-right: 25px;
   }
@@ -84,6 +85,9 @@ h3 {
 
     @include mediaTablet {
       display: flex;
+      font-size: 14px;
+      padding-top: 30px;
+      padding-bottom: 30px;
     }
   }
 }

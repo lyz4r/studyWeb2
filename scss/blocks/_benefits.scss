@@ -1,6 +1,7 @@
 .benefits__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 4fr));
+  gap: 20px;
 
   padding: 20px;
   align-items: center;
